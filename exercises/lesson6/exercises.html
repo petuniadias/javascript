@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+  </head>
+  <body>
+    <script>
+      const hour = 17;
+      if (hour >= 6 && hour < 13) {
+        console.log('Good morning!');
+      } else if (hour >= 13 && hour < 18) {
+        console.log('Good afternoon!');
+      } else {
+        console.log('Good night!');
+      }
+
+      const name = 'Petúnia';
+
+      if (hour >= 6 && hour < 13) {
+        console.log(`Good morning ${name}!`);
+      } else if (hour >= 13 && hour < 18) {
+        console.log(`Good afternoon ${name}!`);
+      } else {
+        console.log(`Good night ${name}!`);
+      }
+
+      const age = 64;
+
+      if (age <= 6 || age >= 65) {
+        console.log('Discount');
+      } else {
+        console.log('No discount');
+      }
+
+      const isHoliday = true;
+
+      if ((age <= 6 || age >= 65) && isHoliday) {
+        console.log('Discount');
+      } else {
+        console.log('No discount');
+      }
+
+      const randomNumber = Math.random();
+
+      if(randomNumber < 0.5) {
+        console.log('heads');
+      } else {
+        console.log('tails');
+      }
+
+      let result;
+
+      if(randomNumber < 0.5) {
+        result = 'heads';
+      } else {
+        result = 'tails';
+      }
+
+      const guess = 'tails';
+
+      if (result === guess) {
+        console.log('You win!');
+      } else {
+        console.log('You lose!');
+      }
+
+      randomNumber < 0.5 ? result = 'heads' : result = 'tails';
+      guess === result ? console.log('You win!') : console.log('You lose!');
+    </script>
+    
+
+  </body>
+</html>
