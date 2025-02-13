@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+  </head>
+  <body>
+    <button class="js-btn">
+      9a
+    </button>
+
+    <button class="js-btn-one">
+      9b
+    </button>
+
+    <br>
+    <br>
+    <button class="js-heads-btn" onclick="
+      coinChoice('heads');
+    ">
+      heads
+    </button>
+
+    <button class="js-tails-btn" onclick="
+      coinChoice('tails');
+    ">
+      tails
+    </button>
+
+    <p class="js-display-txt">
+    </p>
+
+    <br>
+    <input placeholder="Name" class="js-name-input" 
+    onkeydown="
+      pressEnter(event);
+      ">
+
+    <button onclick="
+      formSubmit();
+    ">Submit</button>
+
+    <p class="js-message"></p>
+
+    <script>
+      const btn = document.querySelector('.js-btn');
+      console.log(btn);
+
+      const btnOne = document.querySelector('.js-btn-one');
+      btnOne.innerText = '9b done!';
+
+      function coinChoice(choice) {
+        const text = document.querySelector('.js-display-txt-one');
+        text.innerText = `You chose: ${choice}`;
+      }
+
+      function formSubmit() {
+        const inputElement = document.querySelector('.js-name-input');
+        document.querySelector('.js-message')
+          .innerHTML = `Your name is: ${inputElement.value}`;
+      }
+
+      function pressEnter(event) {
+        console.log(event.key);
+        if (event.key === 'Enter') {
+          formSubmit();
+        }
+      }
+    </script>
+  </body>
+</html>
