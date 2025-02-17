@@ -16,6 +16,32 @@ if (!score) {
 }
 */
 
+document.querySelector('.js-rock-btn')
+  .addEventListener('click', () => {
+    playGame('rock');
+  });
+
+document.querySelector('.js-paper-btn')
+  .addEventListener('click', () => {
+    playGame('paper');
+  });
+
+document.querySelector('.js-scissors-btn')
+  .addEventListener('click', () => {
+    playGame('scissors');
+  });
+
+document.body.addEventListener('keydown', (event) => {
+  console.log(event.key);
+  if (event.key === 'r') {
+    playGame('rock');
+  } else if (event.key === 'p') {
+    playGame('paper');
+  } else if (event.key === 's') {
+    playGame('scissors');
+  }
+});
+
 function playGame(playerMove) {
   const computerMove = pickComputerMove();
 
@@ -98,14 +124,17 @@ function pickComputerMove() {
 let isAutoPlaying = false;
 let intervalId;
 
+//const autoPlay = () => {
+
+//};
+
 function autoPlay() {
   if (!isAutoPlaying) {
-    intervalId = setInterval(function() {
+    intervalId = setInterval(() => {
       const playerMove = pickComputerMove();
       playGame(playerMove);
     }, 1000);
     isAutoPlaying = true;
-
   } else {
     clearInterval(intervalId);
     isAutoPlaying = false;
